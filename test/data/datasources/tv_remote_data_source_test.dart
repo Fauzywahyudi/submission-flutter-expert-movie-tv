@@ -1,9 +1,10 @@
 import 'dart:convert';
+import 'dart:io';
 
-import 'package:ditonton/data/datasources/tv_remote_data_source.dart';
-import 'package:ditonton/common/exception.dart';
-import 'package:ditonton/data/models/tv_detail_model.dart';
-import 'package:ditonton/data/models/tv_response.dart';
+import 'package:core/data/datasources/tv_remote_data_source.dart';
+import 'package:core/core.dart';
+import 'package:core/data/models/tv_detail_model.dart';
+import 'package:core/data/models/tv_response.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
@@ -153,7 +154,13 @@ void main() {
       when(mockHttpClient
               .get(Uri.parse('$BASE_URL/search/tv?$API_KEY&query=$tQuery')))
           .thenAnswer((_) async => http.Response(
-              readJson('dummy_data/search_kimetsu_tv.json'), 200));
+                readJson('dummy_data/search_kimetsu_tv.json'),
+                200,
+                headers: {
+                  HttpHeaders.contentTypeHeader:
+                      'application/json; charset=utf-8',
+                },
+              ));
       // act
       final result = await dataSource.searchTvs(tQuery);
       // assert
