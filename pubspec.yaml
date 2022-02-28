@@ -29,7 +29,7 @@ dependencies:
   core:
     path: modules/core
   search:
-    path: modules/search
+    path: modules/movies/search
   tv:
     path: modules/tv
   movie:

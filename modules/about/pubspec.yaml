@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
 
   core:
-    path: ../core
+    path: '../core'
 
 dev_dependencies:
   flutter_test:

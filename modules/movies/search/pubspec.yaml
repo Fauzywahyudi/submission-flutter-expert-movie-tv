@@ -13,9 +13,9 @@ dependencies:
 
   flutter_bloc: ^8.0.0
   core:
-    path: ../core
+    path: ../../core
   movie:
-    path: ../movie
+    path: ../../movie
   dartz: ^0.10.0
   equatable: ^2.0.2
   bloc_test: ^9.0.0
