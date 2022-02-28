@@ -28,14 +28,14 @@ dependencies:
     path: modules/about
   core:
     path: modules/core
-  search:
-    path: modules/movies/search
+  search_movie:
+    path: modules/search_movie
   tv:
     path: modules/tv
   movie:
     path: modules/movie
   search_tv:
-    path: modules/tv_series/search_tv
+    path: modules/search_tv
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2

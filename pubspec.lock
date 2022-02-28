@@ -592,17 +592,17 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.27.3"
-  search:
+  search_movie:
     dependency: "direct main"
     description:
-      path: "modules/movies/search"
+      path: "modules/search_movie"
       relative: true
     source: path
     version: "0.0.1"
   search_tv:
     dependency: "direct main"
     description:
-      path: "modules/tv_series/search_tv"
+      path: "modules/search_tv"
       relative: true
     source: path
     version: "0.0.1"

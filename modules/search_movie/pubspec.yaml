@@ -1,4 +1,4 @@
-name: about
+name: search_movie
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -11,9 +11,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  
+  flutter_bloc: ^8.0.0
   core:
-    path: '../core'
+    path: ../core
+  movie:
+    path: ../movie
+  dartz: ^0.10.0
+  equatable: ^2.0.2
+  bloc_test: ^9.0.0
+  rxdart:
 
 dev_dependencies:
   flutter_test:
@@ -21,7 +28,6 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   mockito: ^5.0.8
   build_runner: ^2.0.4
-  analyzer:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
