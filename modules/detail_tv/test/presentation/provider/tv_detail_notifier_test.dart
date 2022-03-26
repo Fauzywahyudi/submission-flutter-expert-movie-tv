@@ -1,18 +1,18 @@
 import 'package:dartz/dartz.dart';
 import 'package:core/domain/entities/tv.dart';
 import 'package:core/core.dart';
-import 'package:core/domain/usecases/get_tv_detail.dart';
-import 'package:core/domain/usecases/get_tv_recommendations.dart';
-import 'package:core/domain/usecases/get_watchlist_status_tv.dart';
-import 'package:core/domain/usecases/remove_watchlist_tv.dart';
-import 'package:core/domain/usecases/save_watchlist_tv.dart';
-import 'package:tv/presentation/provider/tv_detail_notifier.dart';
+import 'package:detail_tv/domain/usecases/get_tv_detail.dart';
+import 'package:detail_tv/domain/usecases/get_tv_recommendations.dart';
+import 'package:detail_tv/domain/usecases/get_watchlist_status_tv.dart';
+import 'package:detail_tv/domain/usecases/remove_watchlist_tv.dart';
+import 'package:detail_tv/domain/usecases/save_watchlist_tv.dart';
+import 'package:detail_tv/presentation/provider/tv_detail_notifier.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '../.././dummy_data/dummy_objects.dart';
-import 'tv_detail_notifier_test.mocks.dart';
+import '../../dummy_data/dummy_objects.dart';
+import '../../presentation/provider/tv_detail_notifier_test.mocks.dart';
 
 @GenerateMocks([
   GetTvDetail,

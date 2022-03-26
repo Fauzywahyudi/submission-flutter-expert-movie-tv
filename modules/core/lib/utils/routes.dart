@@ -11,3 +11,4 @@ const WATCHLIST_ROUTE = '/watchlist-movie';
 
 const HOME_TV_ROUTE = '/home-tv';
 const SEARCH_TV_ROUTE = '/search-tv';
+const DETAIL_TV_ROUTE = '/detail_tv';

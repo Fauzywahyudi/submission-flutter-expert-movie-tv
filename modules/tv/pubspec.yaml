@@ -16,6 +16,8 @@ dependencies:
     path: ../core
   search_tv:
     path: ../search_tv
+  detail_tv:
+    path: ../detail_tv
 
 dev_dependencies:
   flutter_test:

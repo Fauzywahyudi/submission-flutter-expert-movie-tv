@@ -3,13 +3,13 @@ import 'package:core/core.dart';
 import 'package:core/domain/entities/genre.dart';
 import 'package:core/domain/entities/tv.dart';
 import 'package:core/domain/entities/tv_detail.dart';
-import 'package:tv/presentation/provider/tv_detail_notifier.dart';
+import 'package:detail_tv/presentation/provider/tv_detail_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 
 class TvDetailPage extends StatefulWidget {
-  static const ROUTE_NAME = '/detail-tv';
+  // static const ROUTE_NAME = '/detail-tv';
 
   final int id;
   TvDetailPage({required this.id});
@@ -36,7 +36,7 @@ class _TvDetailPageState extends State<TvDetailPage> {
       body: Consumer<TvDetailNotifier>(
         builder: (context, provider, child) {
           if (provider.tvState == RequestState.Loading) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else if (provider.tvState == RequestState.Loaded) {
@@ -72,7 +72,7 @@ class DetailContent extends StatelessWidget {
         CachedNetworkImage(
           imageUrl: 'https://image.tmdb.org/t/p/w500${tv.posterPath}',
           width: screenWidth,
-          placeholder: (context, url) => Center(
+          placeholder: (context, url) => const Center(
             child: CircularProgressIndicator(),
           ),
           errorWidget: (context, url, error) => Icon(Icons.error),
@@ -82,7 +82,7 @@ class DetailContent extends StatelessWidget {
           child: DraggableScrollableSheet(
             builder: (context, scrollController) {
               return Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: kRichBlack,
                   borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
                 ),
@@ -143,9 +143,9 @@ class DetailContent extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   isAddedWatchlist
-                                      ? Icon(Icons.check)
-                                      : Icon(Icons.add),
-                                  Text('Watchlist'),
+                                      ? const Icon(Icons.check)
+                                      : const Icon(Icons.add),
+                                  const Text('Watchlist'),
                                 ],
                               ),
                             ),
@@ -160,7 +160,7 @@ class DetailContent extends StatelessWidget {
                                 RatingBarIndicator(
                                   rating: tv.voteAverage / 2,
                                   itemCount: 5,
-                                  itemBuilder: (context, index) => Icon(
+                                  itemBuilder: (context, index) => const Icon(
                                     Icons.star,
                                     color: kMikadoYellow,
                                   ),
@@ -169,7 +169,7 @@ class DetailContent extends StatelessWidget {
                                 Text('${tv.voteAverage}')
                               ],
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             Text(
                               'Overview',
                               style: kHeading6,
@@ -177,7 +177,7 @@ class DetailContent extends StatelessWidget {
                             Text(
                               tv.overview,
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             Text(
                               'Recommendations',
                               style: kHeading6,
@@ -186,7 +186,7 @@ class DetailContent extends StatelessWidget {
                               builder: (context, data, child) {
                                 if (data.recommendationState ==
                                     RequestState.Loading) {
-                                  return Center(
+                                  return const Center(
                                     child: CircularProgressIndicator(),
                                   );
                                 } else if (data.recommendationState ==
@@ -206,19 +206,20 @@ class DetailContent extends StatelessWidget {
                                             onTap: () {
                                               Navigator.pushReplacementNamed(
                                                 context,
-                                                TvDetailPage.ROUTE_NAME,
+                                                DETAIL_TV_ROUTE,
                                                 arguments: tv.id,
                                               );
                                             },
                                             child: ClipRRect(
-                                              borderRadius: BorderRadius.all(
+                                              borderRadius:
+                                                  const BorderRadius.all(
                                                 Radius.circular(8),
                                               ),
                                               child: CachedNetworkImage(
                                                 imageUrl:
                                                     'https://image.tmdb.org/t/p/w500${tv.posterPath}',
                                                 placeholder: (context, url) =>
-                                                    Center(
+                                                    const Center(
                                                   child:
                                                       CircularProgressIndicator(),
                                                 ),
@@ -265,7 +266,7 @@ class DetailContent extends StatelessWidget {
             backgroundColor: kRichBlack,
             foregroundColor: Colors.white,
             child: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.pop(context);
               },

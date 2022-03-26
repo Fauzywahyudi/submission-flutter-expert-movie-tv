@@ -3,7 +3,6 @@ import 'package:core/core.dart';
 import 'package:core/domain/entities/tv.dart';
 import 'package:tv/presentation/pages/on_air_tv_page.dart';
 import 'package:tv/presentation/pages/popular_tv_page.dart';
-import 'package:tv/presentation/pages/tv_detail_page.dart';
 import 'package:tv/presentation/provider/tv_list_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -184,7 +183,7 @@ class TvList extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(
                   context,
-                  TvDetailPage.ROUTE_NAME,
+                  DETAIL_TV_ROUTE,
                   arguments: tv.id,
                 );
               },

@@ -1,14 +1,14 @@
 import 'package:core/core.dart';
 import 'package:core/domain/entities/tv.dart';
-import 'package:tv/presentation/pages/tv_detail_page.dart';
-import 'package:tv/presentation/provider/tv_detail_notifier.dart';
+import 'package:detail_tv/presentation/pages/tv_detail_page.dart';
+import 'package:detail_tv/presentation/provider/tv_detail_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 
-import '../.././dummy_data/dummy_objects.dart';
+import '../../dummy_data/dummy_objects.dart';
 import 'tv_detail_page_test.mocks.dart';
 
 @GenerateMocks([TvDetailNotifier])

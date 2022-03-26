@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:search_movie/presentation/pages/search_page.dart';
 import 'package:search_tv/presentation/pages/search_tv_page.dart';
 import 'package:movie/presentation/pages/top_rated_movies_page.dart';
-import 'package:tv/presentation/pages/tv_detail_page.dart';
+import 'package:detail_tv/presentation/pages/tv_detail_page.dart';
 import 'package:movie/presentation/pages/watchlist_movies_page.dart';
 import 'package:movie/presentation/provider/movie_detail_notifier.dart';
 import 'package:movie/presentation/provider/movie_list_notifier.dart';
@@ -20,7 +20,7 @@ import 'package:movie/presentation/provider/popular_movies_notifier.dart';
 import 'package:movie/presentation/provider/top_rated_movies_notifier.dart';
 import 'package:movie/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:tv/presentation/provider/tv_list_notifier.dart';
-import 'package:tv/presentation/provider/tv_detail_notifier.dart';
+import 'package:detail_tv/presentation/provider/tv_detail_notifier.dart';
 import 'package:tv/presentation/provider/popular_tvs_notifier.dart';
 import 'package:tv/presentation/provider/on_air_tv_notifier.dart';
 import 'package:search_tv/presentation/provider/tv_search_notifier.dart';
@@ -119,9 +119,9 @@ class MyApp extends StatelessWidget {
               return CupertinoPageRoute(builder: (_) => PopularTvsPage());
             case OnAirTvsPage.ROUTE_NAME:
               return CupertinoPageRoute(builder: (_) => OnAirTvsPage());
-            case SearchTvPage.ROUTE_NAME:
+            case SEARCH_TV_ROUTE:
               return CupertinoPageRoute(builder: (_) => SearchTvPage());
-            case TvDetailPage.ROUTE_NAME:
+            case DETAIL_TV_ROUTE:
               final id = settings.arguments as int;
               return MaterialPageRoute(
                 builder: (_) => TvDetailPage(id: id),
