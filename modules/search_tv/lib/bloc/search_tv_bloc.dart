@@ -13,6 +13,7 @@ class SearchTvBloc extends Bloc<SearchTvEvent, SearchTvState> {
   SearchTvBloc(this._searchTvs) : super(SearchTvEmpty()) {
     on<OnQueryChanged>((event, emit) async {
       final query = event.query;
+      print('cok cok');
 
       emit(SearchTvLoading());
       final result = await _searchTvs.execute(query);

@@ -26,6 +26,8 @@ import 'package:tv/presentation/provider/on_air_tv_notifier.dart';
 import 'package:search_tv/presentation/provider/tv_search_notifier.dart';
 import 'package:tv/presentation/provider/watchlist_tv_notifier.dart';
 import 'package:search_movie/bloc/search_bloc.dart';
+import 'package:search_tv/bloc/search_tv_bloc.dart';
+import 'package:detail_tv/bloc/tv_detail_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -79,6 +81,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => di.locator<SearchBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<SearchTvBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<TvDetailBloc>(),
         ),
       ],
       child: MaterialApp(

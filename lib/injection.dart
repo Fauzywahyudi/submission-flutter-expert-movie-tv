@@ -16,6 +16,7 @@ import 'package:core/domain/usecases/get_popular_movies.dart';
 import 'package:core/domain/usecases/get_popular_tvs.dart';
 import 'package:core/domain/usecases/get_top_rated_movies.dart';
 import 'package:core/domain/usecases/get_top_rated_tvs.dart';
+import 'package:detail_tv/bloc/tv_detail_bloc.dart';
 import 'package:detail_tv/domain/usecases/get_tv_detail.dart';
 import 'package:detail_tv/domain/usecases/get_tv_recommendations.dart';
 import 'package:core/domain/usecases/get_watchlist_movies.dart';
@@ -28,6 +29,7 @@ import 'package:core/domain/usecases/save_watchlist.dart';
 import 'package:detail_tv/domain/usecases/save_watchlist_tv.dart';
 import 'package:search_movie/bloc/search_bloc.dart';
 import 'package:search_movie/domain/usecases/search_movies.dart';
+import 'package:search_tv/bloc/search_tv_bloc.dart';
 import 'package:search_tv/domain/usecases/search_tv.dart';
 import 'package:movie/presentation/provider/movie_detail_notifier.dart';
 import 'package:movie/presentation/provider/movie_list_notifier.dart';
@@ -128,6 +130,20 @@ void init() {
       locator(),
     ),
   );
+  locator.registerFactory(
+    () => SearchTvBloc(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TvDetailBloc(
+      locator(),
+      locator(),
+      locator(),
+      locator(),
+      locator(),
+    ),
+  );
 
   // use case
   locator.registerLazySingleton(() => GetNowPlayingMovies(locator()));
@@ -151,7 +167,7 @@ void init() {
   locator.registerLazySingleton(() => GetWatchListStatusTv(locator()));
   locator.registerLazySingleton(() => SaveWatchlistTv(locator()));
   locator.registerLazySingleton(() => RemoveWatchlistTv(locator()));
-  locator.registerLazySingleton(() => GetWatchListStatusTv(locator()));
+  locator.registerLazySingleton(() => GetWatchlistTvs(locator()));
 
   // repository
   locator.registerLazySingleton<MovieRepository>(
